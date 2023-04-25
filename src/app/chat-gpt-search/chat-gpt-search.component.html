@@ -6,7 +6,7 @@
             (keyup.enter)="search(chatGpt.value)">
     </mat-form-field>
 </div>
-<mat-spinner [diameter]="70" *ngIf="loading"></mat-spinner>
+<mat-spinner [diameter]="70" *ngIf="loading$ | async"></mat-spinner>
 <textarea disabled [ngClass]="isSubmit ? 'fade_in':'none'">
     {{result}}
 </textarea>

@@ -9,20 +9,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ChatGptSearchComponent } from './chat-gpt-search/chat-gpt-search.component';
-import { GoogleSearchComponent } from './google-search/google-search.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddTokenInterceptor } from './core/interceptors/add-token.interceptor';
+import { AddSpinnerInterceptor } from './core/interceptors/add-spinner.interceptor';
 // import { AddSpinnerInterceptor } from './core/interceptors/add-spinner.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    ChatGptSearchComponent,
-    GoogleSearchComponent
+    ChatGptSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +36,9 @@ import { AddTokenInterceptor } from './core/interceptors/add-token.interceptor';
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AddSpinnerInterceptor, multi: true
     },
   ],
   bootstrap: [AppComponent]

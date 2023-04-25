@@ -18,7 +18,8 @@ export class AddTokenInterceptor implements HttpInterceptor {
       if (!request.headers.has("Authorization")) {
         request = request.clone({
           setHeaders: {
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
+            // 'Authorization': 'Bearer [YOUR_API_KEY from openAI.com]'
           }
         });
       }

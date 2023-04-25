@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Duality';
-  keyword!: string;
-  search: boolean = false;
-  sendData(event: string): void {
-    console.log("This is log from app.component file:" + event);
-    if (event == "13")
-      this.search = true;
-    else {
-      this.search = false;
-      this.keyword = event;
-    }
-  }
+  // keyword!: string;
+  // search: boolean = false;
+  // sendData(event: string): void {
+  //   console.log("This is log from app.component file:" + event);
+  //   if (event == "13")
+  //     this.search = true;
+  //   else {
+  //     this.search = false;
+  //     this.keyword = event;
+  //   }
+  // }
 }
